@@ -9,7 +9,7 @@ export class CityService {
   constructor(
     @InjectRepository(CityEntity)
     private readonly cityRepository: Repository<CityEntity>,
-    private readonly cacheService: CacheService
+    private readonly cacheService: CacheService,
   ) {}
 
   async getAllCities(): Promise<CityEntity[]> {
@@ -22,7 +22,7 @@ export class CityService {
         where: {
           stateId,
         },
-      })
+      }),
     );
   }
 }
